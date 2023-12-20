@@ -24,14 +24,14 @@ public class AwardIntervalControllerTest {
             .andExpect(jsonPath("$.min", hasSize(greaterThanOrEqualTo(1))))
             .andExpect(jsonPath("$.max", hasSize(greaterThanOrEqualTo(1))))
 
-            .andExpect(jsonPath("$.min[0].producer", is("Bo Derek")))
-            .andExpect(jsonPath("$.min[0].interval", is(6)))
-            .andExpect(jsonPath("$.min[0].previousWin", is(1984)))
-            .andExpect(jsonPath("$.min[0].followingWin", is(1990)))
+            .andExpect(jsonPath("$.min[0].producer", is("Joel Silver")))
+            .andExpect(jsonPath("$.min[0].interval", is(1)))
+            .andExpect(jsonPath("$.min[0].previousWin", is(1990)))
+            .andExpect(jsonPath("$.min[0].followingWin", is(1991)))
 
-            .andExpect(jsonPath("$.max[0].producer", is("Bo Derek")))
-            .andExpect(jsonPath("$.max[0].interval", is(6)))
-            .andExpect(jsonPath("$.max[0].previousWin", is(1984)))
-            .andExpect(jsonPath("$.max[0].followingWin", is(1990)));
+            .andExpect(jsonPath("$.max[0].producer", is("Matthew Vaughn")))
+            .andExpect(jsonPath("$.max[0].interval", is(13)))
+            .andExpect(jsonPath("$.max[0].previousWin", is(2002)))
+            .andExpect(jsonPath("$.max[0].followingWin", is(2015)));
     }
 }

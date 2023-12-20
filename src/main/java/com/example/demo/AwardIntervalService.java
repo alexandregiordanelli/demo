@@ -23,7 +23,10 @@ public class AwardIntervalService {
         List<ProducerInterval> allIntervals = new ArrayList<>();
 
         for (ProducerAward award : awards) {
-            producerWins.computeIfAbsent(award.getProducer(), k -> new ArrayList<>()).add(award.getYear());
+            String[] producers = award.getProducer().split(",\\s*|\\s+and\\s+");
+            for (String producer : producers) {
+                producerWins.computeIfAbsent(producer, k -> new ArrayList<>()).add(award.getYear());
+            }
         }
 
         for (Map.Entry<String, List<Integer>> entry : producerWins.entrySet()) {
